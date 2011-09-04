@@ -1,20 +1,27 @@
 package com.jkenoyer.kidtracker.activity.children;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.Helloandriod.R;
+import com.jkenoyer.kidtracker.R;
 import com.jkenoyer.kidtracker.activity.BaseActivity;
 import com.jkenoyer.kidtracker.model.Child;
+import com.jkenoyer.kidtracker.model.IChildProvider;
+import com.jkenoyer.kidtracker.model.ProviderFactory;
 
 public class ChildrenNewActivity extends BaseActivity {
+	
+	private IChildProvider provider;
+	
+	public ChildrenNewActivity(){
+		provider = ProviderFactory.getChildProvider(this);
+	}
+	
 	/** Called when the activity is first created. */
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public void init() {
 
 		setContentView(R.layout.childrennewview);
 
@@ -38,7 +45,7 @@ public class ChildrenNewActivity extends BaseActivity {
 
 				Child child = new Child();
 				child.setName((String) txtName.getText());
-				child.Create();
+				provider.save(child);
 				goBack(v);
 			}			
 		});

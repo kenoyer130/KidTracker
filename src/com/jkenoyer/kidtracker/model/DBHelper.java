@@ -8,8 +8,7 @@ public class DBHelper extends SQLiteOpenHelper{
 
 	private SQLiteDatabase db;
 	private static final int DATABASE_VERSION = 1;
-	private static final String DB_NAME = "sample.db";
-    private static final String Child_NAME = "child";
+	private static final String DB_NAME = "kidtracker.db"; 
 	
 	 /**
      * Constructor
@@ -23,7 +22,7 @@ public class DBHelper extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(
-                "create table " + Child_NAME + " (id integer primary key autoincrement," + "name text not null) ");
+                "create table " + DB_NAME + " (id integer primary key autoincrement," + "name text not null) ");
 		
 	}
 

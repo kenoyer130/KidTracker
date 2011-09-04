@@ -1,28 +1,22 @@
 package com.jkenoyer.kidtracker.activity.main;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.Helloandriod.R;
+import com.jkenoyer.kidtracker.R;
 import com.jkenoyer.kidtracker.activity.BaseActivity;
 import com.jkenoyer.kidtracker.activity.children.ChildrenManageActivity;
 
 public class MainActivity extends BaseActivity{
 	
-	private static Activity appContext;
-	
 	/** Called when the activity is first created. */
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		setContentView(R.layout.main);
+	public void init() {
 		
-		appContext = this;
+		setContentView(R.layout.main);
 
 		// top label
 		TextView tv = new TextView(this);

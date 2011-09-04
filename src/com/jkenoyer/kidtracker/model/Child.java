@@ -1,13 +1,8 @@
 package com.jkenoyer.kidtracker.model;
 
-public class Child implements ICrud<Child> {
+public class Child {
 	private int id;
 	private String name;
-	private static IChildProvider childProvider;
-	
-	static{
-		ProviderFactory.getChildProvider();	
-	}
 	
 	public int getId() {
 		return id;
@@ -15,22 +10,6 @@ public class Child implements ICrud<Child> {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public int Create() {
-		return childProvider.save(this);
-	}
-
-	public static Child Read(int id) {
-		return childProvider.read(id);
-	}
-
-	public void Update(Child child) {
-		childProvider.update(child);		
-	}
-
-	public void Delete(int id) {
-		childProvider.delete(id);		
 	}
 
 	public String getName() {
