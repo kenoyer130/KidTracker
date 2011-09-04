@@ -2,10 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
-	
-	<Button android:id="@+id/btnBack"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:text="Back" />	
 			
 	<TextView 
 		android:id="@+id/lblTitle"
@@ -14,6 +10,10 @@
 
 	<Button android:id="@+id/btnCreateChild"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:text="Create Child" />	
+		android:text="Create Child" />
+		
+	<Button android:id="@+id/btnUpdateChild"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:text="Update Child" />
 		
 </LinearLayout>

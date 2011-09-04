@@ -11,12 +11,16 @@
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
-		</activity>
+		</activity>		
 
-		<activity android:name=".MainActivity" android:label="@string/app_name" />
-
-		<activity android:name=".ManageChildrenActivity"
-			android:label="Manage Children" />
+		<activity android:name="com.jkenoyer.kidtracker.activity.children.ChildrenManageActivity"
+			android:label="Manage children" />
+		
+		<activity android:name="com.jkenoyer.kidtracker.activity.children.ChildrenListActivity"
+			android:label="Select a child" />
+		
+		<activity android:name="com.jkenoyer.kidtracker.activity.children.ChildrenNewActivity"
+			android:label="Add new child" />
 
 	</application>
 </manifest>

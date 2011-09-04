@@ -25,14 +25,6 @@ public class ChildrenNewActivity extends BaseActivity {
 
 		setContentView(R.layout.childrennewview);
 
-		// btnBack
-		Button btnBack = (Button) findViewById(R.id.btnBack);
-		btnBack.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				goBack(v);
-			}
-		});
-
 		final TextView txtName = (TextView) findViewById(R.id.txtName);
 
 		// btnCreateChild
