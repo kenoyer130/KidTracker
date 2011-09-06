@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity{
 	@Override
 	public void init() {
 		
-		addGlobalErrorHandler();
+		
 				
 		setContentView(R.layout.main);
 
@@ -37,13 +37,5 @@ public class MainActivity extends BaseActivity{
 		// btnManageMerits
 		Button btnManageMerits = (Button) findViewById(R.id.btnManageMerits);
 		btnManageMerits.setOnClickListener(null);
-	}
-
-	private void addGlobalErrorHandler() {
-		Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-			public void uncaughtException(Thread thread, Throwable ex) {
-				Log.v("error",ex.getMessage()+" stack : "+ex.getStackTrace().toString());				
-			}
-		});		
 	}	
 }

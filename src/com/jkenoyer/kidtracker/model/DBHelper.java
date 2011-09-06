@@ -14,24 +14,25 @@ public class DBHelper extends SQLiteOpenHelper{
      * Constructor
      * @param context the application context
      */
-    public DBHelper(Context context) {
-        super(context, DB_NAME, null, DATABASE_VERSION);
-        db = getWritableDatabase();
+    DBHelper(Context context) {
+        super(context, DB_NAME, null, DATABASE_VERSION); 
+       
     }
 
 	@Override
-	public void onCreate(SQLiteDatabase db) {
+	public void onCreate(SQLiteDatabase db) {	
+	
 		db.execSQL(
                 "create table " + DB_NAME + " (id integer primary key autoincrement," + "name text not null) ");
 		
-	}
+	}	
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			
 	}
 
-	public SQLiteDatabase getDb() {
+	public SQLiteDatabase getDb() {		
 		return db;
 	}
 }
