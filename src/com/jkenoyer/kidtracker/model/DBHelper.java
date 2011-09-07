@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper{
 
-	private SQLiteDatabase db;
+	protected SQLiteDatabase db;
 	private static final int DATABASE_VERSION = 1;
 	private static final String DB_NAME = "kidtracker.db"; 
 	
@@ -15,8 +15,7 @@ public class DBHelper extends SQLiteOpenHelper{
      * @param context the application context
      */
     DBHelper(Context context) {
-        super(context, DB_NAME, null, DATABASE_VERSION); 
-       
+        super(context, DB_NAME, null, DATABASE_VERSION);        
     }
 
 	@Override
@@ -30,9 +29,5 @@ public class DBHelper extends SQLiteOpenHelper{
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			
-	}
-
-	public SQLiteDatabase getDb() {		
-		return db;
 	}
 }

@@ -8,21 +8,21 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.jkenoyer.kidtracker.model.DBHelper;
 
-public class ChildProviderLocal implements IChildProvider {
-
-	private SQLiteDatabase db;
+public class ChildProviderLocal  implements IChildProvider {	
+	
 	private static final String TABLE_NAME = "Child";
+	private DBHelper dbHelper;
 
 	public ChildProviderLocal(Context context) {
-		db = new DBHelper(context).getDb();
+		dbHelper = new DBHelper();
 	}
 
-	public int save(Child child) {
-
+	public int save(Child child) {		
+		
 		ContentValues values = new ContentValues();
 		values.put("name", child.getName());
 
-		return (int) db.insert("child", null, values);
+		return (int) dbHelper.getWritableDatabase().insert("child", null, values);
 	}
 
 	public void update(Child child) {
@@ -37,7 +37,7 @@ public class ChildProviderLocal implements IChildProvider {
 
 	public ArrayList<Child> readAll() {
 		ArrayList<Child> list = new ArrayList<Child>();
-		Cursor cursor = this.db
+		Cursor cursor = dbHelper.getReadableDatabase()
 				.query(TABLE_NAME, new String[] { "name", "name" }, null, null,
 						null, null, "name");
 		if (cursor.moveToFirst()) {

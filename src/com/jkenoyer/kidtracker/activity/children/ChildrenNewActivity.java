@@ -32,12 +32,12 @@ public class ChildrenNewActivity extends BaseActivity {
 		btnSave.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				String name = (String) txtName.getText();
+				String name = txtName.getText().toString();
 				if (name == "" || name == null)
 					return;
 
 				Child child = new Child();
-				child.setName((String) txtName.getText());
+				child.setName(name);
 				provider.save(child);
 				goBack(v);
 			}
@@ -47,6 +47,5 @@ public class ChildrenNewActivity extends BaseActivity {
 	private void goBack(View v) {
 		Intent intent = new Intent(v.getContext(), ChildrenManageActivity.class);
 		startActivityForResult(intent, 0);
-
 	}
 }
